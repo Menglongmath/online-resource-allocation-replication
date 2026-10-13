@@ -1,0 +1,30 @@
+{
+ "100000": {
+  "types": 85338099,
+  "type_action_pairs": 99687080241,
+  "largest_menu": 17540,
+  "mean_menu_size_under_p": 192.48405322559523,
+  "stocked_pairs": 75041
+ },
+ "1000000": {
+  "types": 85338099,
+  "type_action_pairs": 99771522108,
+  "largest_menu": 17540,
+  "mean_menu_size_under_p": 192.62591623904137,
+  "stocked_pairs": 75055
+ },
+ "10000000": {
+  "types": 85338099,
+  "type_action_pairs": 99771522108,
+  "largest_menu": 17540,
+  "mean_menu_size_under_p": 192.62591623904137,
+  "stocked_pairs": 75055
+ },
+ "100000000": {
+  "types": 85338099,
+  "type_action_pairs": 99771522108,
+  "largest_menu": 17540,
+  "mean_menu_size_under_p": 192.62591623904137,
+  "stocked_pairs": 75055
+ }
+}

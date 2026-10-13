@@ -1,0 +1,7 @@
+{
+  "status": "optimal",
+  "objective": 624.78076558067,
+  "dual_bound": 624.78076558067,
+  "duality_gap": 0.0,
+  "max_violation": 7.105427357601002e-15
+}

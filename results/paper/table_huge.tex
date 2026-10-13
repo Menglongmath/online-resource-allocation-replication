@@ -1,0 +1,15 @@
+\begin{table}[!htb]\centering
+\caption{Instance with $9.98\times10^{10}$ type--action pairs, unknown arrival probabilities. Percentage loss relative to an upper bound on the hindsight LP, and CPU time per request.}
+\label{tab:numerical-huge}
+\begingroup\small\setlength{\tabcolsep}{3pt}
+\begin{tabular*}{\linewidth}{@{}l@{\extracolsep{\fill}}rrrrr@{}}\toprule
+ & \multicolumn{4}{c}{Percentage loss} & CPU time \\
+\cmidrule(lr){2-5}
+Policy & $T=10^{5}$ & $T=10^{6}$ & $T=10^{7}$ & $T=10^{8}$ & ($\mu$s per request) \\\midrule
+Our policy & \textbf{4.92} & \textbf{2.29} & \textbf{1.21} & \textbf{0.26} & 21--30 \\
+DMD & 4.96 & 2.84 & 2.51 & 1.95 & 9--10 \\
+\citet{ma_cao_tsang_xia_2025} & 5.06 & 3.13 & 3.47 & 3.97 & 8--10 \\
+\bottomrule\end{tabular*}
+\par\vspace{3pt}\raggedright\footnotesize
+Mean over demand sequences (10, 10, 10, 5 sequences at the 4 horizons) of the percentage loss $100\,(U-\REV^\mu_T)/U$, where $U\ge\Phi(B_T,N)$ is the upper bound in the text; the largest range over sequences of any entry is 0.36 percentage points. CPU time is the range, over all runs, of the CPU time of a run divided by $T$. The lowest loss at each horizon is in bold.
+\par\endgroup\end{table}

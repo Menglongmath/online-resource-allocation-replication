@@ -1,0 +1,15 @@
+\begin{table}[!htb]\centering
+\caption{Unknown arrival probabilities. Percentage loss relative to the hindsight LP.}
+\label{tab:numerical-unknown}
+\begingroup\small\setlength{\tabcolsep}{3pt}
+\begin{tabular*}{\linewidth}{@{}l@{\hspace{6pt}\extracolsep{\fill}}*{12}{r}@{}}\toprule
+ & \multicolumn{3}{c}{$T=1{,}000$} & \multicolumn{3}{c}{$T=5{,}000$} & \multicolumn{3}{c}{$T=10{,}000$} & \multicolumn{3}{c}{$T=100{,}000$} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){8-10}\cmidrule(lr){11-13}
+Policy & Mean & Min & Max & Mean & Min & Max & Mean & Min & Max & Mean & Min & Max \\\midrule
+Our policy & \textbf{1.639} & 0.148 & 2.849 & \textbf{0.963} & 0.051 & 1.923 & \textbf{0.720} & 0.030 & 1.578 & \textbf{0.206} & 0.005 & 0.607 \\
+DMD & 2.099 & 0.455 & 3.651 & 1.336 & 0.273 & 2.258 & 1.036 & 0.207 & 1.736 & 0.392 & 0.075 & 0.696 \\
+\citet{ma_cao_tsang_xia_2025} & 2.601 & 0.230 & 4.342 & 2.497 & 0.172 & 4.338 & 2.454 & 0.146 & 4.219 & 2.374 & 0.102 & 4.154 \\
+\bottomrule\end{tabular*}
+\par\vspace{3pt}\raggedright\footnotesize
+Mean, minimum, and maximum over the 30 instances of the instance-average percentage loss; each instance average is taken over the 30 demand sequences. The lowest mean at each horizon is in bold.
+\par\endgroup\end{table}

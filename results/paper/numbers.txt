@@ -1,0 +1,49 @@
+Section 6.1: instance sizes over the 30 instances and 6 horizons
+  request types 110-810; item-center pairs with positive inventory 31-225; actions other than rejection 310-38581, at most 1164 for one type
+
+Mean percentage loss over the 30 instances (each averaged over its 30 sequences), all six horizons
+horizon              1000    5000    10000   20000   50000   100000
+policy                                                             
+ours_known            1.404   0.795   0.600   0.439   0.279   0.191
+ours_known_lp_start   1.020   0.468   0.318   0.206   0.113   0.070
+vera_banerjee         0.758   0.293   0.187   0.117   0.059   0.035
+he_fallback           1.149   0.596   0.437   0.315   0.198   0.140
+ours_estimated        1.639   0.963   0.720   0.516   0.312   0.206
+dmd_fallback          2.099   1.336   1.036   0.786   0.533   0.392
+ma2025_fallback       2.601   2.497   2.454   2.434   2.393   2.374
+
+Instances (of 30) in which the first policy has the lower instance-average loss, horizons [1000, 5000, 10000, 20000, 50000, 100000]
+  vera_banerjee vs ours_known_lp_start: [24, 24, 24, 24, 24, 23]
+  ours_known_lp_start vs he_fallback: [22, 29, 29, 30, 30, 30]
+  ours_known vs he_fallback: [4, 9, 12, 13, 16, 17]
+  ours_estimated vs dmd_fallback: [29, 29, 27, 27, 27, 28]
+  ours_estimated vs ma2025_fallback: [30, 30, 30, 30, 30, 30]
+
+Original versions without the fallback rule: mean percentage loss, and whether it is higher than with the rule
+  he: [4.847, 2.24, 1.586, 1.138, 0.723, 0.512]  higher at every horizon: True
+  dmd: [6.446, 3.905, 3.015, 2.283, 1.546, 1.133]  higher at every horizon: True
+  ma2025: [12.028, 10.796, 10.422, 10.159, 9.851, 9.652]  higher at every horizon: True
+
+Figure 1: rank (1 = smallest) of instance I40_M3 among the 30 instances by regret at T = 100,000
+  {'ours_known': 17, 'ours_known_lp_start': 17, 'vera_banerjee': 13, 'he_fallback': 19, 'ours_estimated': 14, 'dmd_fallback': 17, 'ma2025_fallback': 12}
+
+Section 6.2, DMD step sizes on 30 other instances: total reward
+           1000       5000      10000      20000       50000      100000
+rule                                                                    
+paper  345221.2  1773592.1  3576080.2  7199764.9  18110676.1  36345162.8
+s=0.1  324556.4  1663484.6  3346016.7  6723280.0  16901637.9  33940338.0
+s=1    330237.6  1700539.5  3431085.6  6920146.8  17475056.4  35188070.2
+s=10   344517.4  1769577.4  3568646.7  7187911.0  18089534.4  36310833.8
+s=100  337265.6  1742747.4  3522499.4  7108801.0  17936742.0  36071227.4
+  best grid value s=10; it earns less than T^(-1/2) at every horizon: True
+
+Section 6.4: instance statistics by horizon
+{'100000': {'types': 85338099, 'type_action_pairs': 99687080241, 'largest_menu': 17540, 'mean_menu_size_under_p': 192.48405322559523, 'stocked_pairs': 75041}, '1000000': {'types': 85338099, 'type_action_pairs': 99771522108, 'largest_menu': 17540, 'mean_menu_size_under_p': 192.62591623904137, 'stocked_pairs': 75055}, '10000000': {'types': 85338099, 'type_action_pairs': 99771522108, 'largest_menu': 17540, 'mean_menu_size_under_p': 192.62591623904137, 'stocked_pairs': 75055}, '100000000': {'types': 85338099, 'type_action_pairs': 99771522108, 'largest_menu': 17540, 'mean_menu_size_under_p': 192.62591623904137, 'stocked_pairs': 75055}}
+  U exceeds the hindsight LP on the smaller instance by (percent): [0.016, 0.0109]
+Mean percentage loss relative to U
+horizon          100000     1000000    10000000   100000000
+policy                                                     
+dmd_fallback         4.962      2.841      2.512      1.947
+ma2025_fallback      5.057      3.126      3.470      3.971
+ours_estimated       4.924      2.293      1.213      0.265
+CPU microseconds per request (min, max): {'dmd_fallback': {'min': 8.91, 'max': 9.67}, 'ma2025_fallback': {'min': 8.27, 'max': 9.62}, 'ours_estimated': {'min': 20.87, 'max': 30.11}}
